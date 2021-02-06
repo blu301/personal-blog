@@ -1,0 +1,19 @@
+<%- include('partials/header')  %> 
+
+    <!-- main -->
+    <main>
+        <div class="container">
+            <h2>Posts:</h2>
+            <br>
+            <% posts.slice().reverse().forEach(post => { %>
+                <div class="post">
+                   <h3><%= post.title %></h3>
+                    <p>
+                        <%= post.body.slice(0, 99) %>...  <a href="/posts/<%= post.slug %>">Read more</a>
+                    </p>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+<%- include('partials/footer')  %> 
